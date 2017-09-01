@@ -5,7 +5,7 @@ const MBOX_TOKEN = 'pk.eyJ1IjoibmtlZW5lIiwiYSI6ImNqNnp4MnFmcjAxamkzM2wwZ2pmbm5mb
 
 const FLICKR = 'https://api.flickr.com/services/rest';
 
-export const photoReq = () => {
+export const reqPhotos = () => {
   let startDate = (Date.now() - 86400000)/1000 | 0;
 
   return fetch(

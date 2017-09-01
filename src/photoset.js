@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 
-class Mapview extends Component {
+class Photoset extends Component {
   render() {
     return (
       <div>
-        MAPVIEW
+        { this.props.children }
       </div>
     );
   }
 }
 
-export default Mapview;
+export default Photoset;
