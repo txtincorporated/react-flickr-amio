@@ -8,7 +8,7 @@ class Home extends Component {
     return (
       <div>
         <Mapview />
-        <Sheetview photos={this.state.photos}/>
+        <Sheetview photos={this.props.photos}/>
 
       </div>
     );
