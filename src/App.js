@@ -37,9 +37,9 @@ class App extends Component {
       <div className="App">
         <Nav />
         <Switch>
-          <Route path='/' render={props => {
+          <Route path='/' render={props => (
             <Home photos={ photoProp } />
-          }} /> 
+          )} /> 
           <Route path='/map' component={ Mapview } />
           <Route path='/recent' component={ Sheetview } />
 
