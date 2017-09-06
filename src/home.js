@@ -3,16 +3,16 @@ import React, { Component } from 'react';
 import Mapview from './map';
 import Sheetview from './sheet';
 
-class componentName extends Component {
-  render() {
+class Home extends Component {
+  render() {    
     return (
       <div>
         <Mapview />
-        <Sheetview />
+        <Sheetview photos={this.state.photos}/>
 
       </div>
     );
   }
 }
 
-export default componentName;
+export default Home;
