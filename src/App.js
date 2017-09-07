@@ -27,18 +27,18 @@ class App extends Component {
         
       });
     });
-    debugger;
+    // debugger;
   }
 
   render() { 
-    const photoProp = this.state.photos;
+    // const photoProp = this.state.photos;
 
     return (
       <div className="App">
         <Nav />
         <Switch>
           <Route path='/' render={props => (
-            <Home photos={ photoProp } />
+            <Home {...props} photos={ this.state.photos } />
           )} /> 
           <Route path='/map' component={ Mapview } />
           <Route path='/recent' component={ Sheetview } />

@@ -5,7 +5,7 @@ import Sheetview from './sheet';
 
 class Home extends Component {
   render() {    
-    debugger;
+    // debugger;
 
     return (
       <div>
