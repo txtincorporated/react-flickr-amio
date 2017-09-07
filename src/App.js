@@ -6,6 +6,7 @@ import { Route, Switch } from 'react-router-dom';
 import { reqPhotos } from './api';
 
 import Nav from './nav';
+import Photoview from './photoview';
 import Home from './home';
 import Mapview from './map';
 import Sheetview from './sheet';
@@ -36,6 +37,7 @@ class App extends Component {
     return (
       <div className="App">
         <Nav />
+        <Photoview />
         <Switch>
           <Route path='/' render={props => (
             <Home {...props} photos={ this.state.photos } />
