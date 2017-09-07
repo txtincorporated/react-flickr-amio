@@ -5,11 +5,14 @@ import Photodisplay from './photodisplay';
 
 class Sheetview extends Component {
 
-  render() {    
+  render() {
+    console.log('this.props.photos: ', this.props.photos);  
+    debugger;
+
     return (
       <div>
         <Photoset>          
-          {this.state.photos.map(photo => {
+          {this.props.photos.map(photo => {
             return <Photodisplay { ...photo }/>;
 
           })}
