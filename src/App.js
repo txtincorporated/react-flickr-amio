@@ -21,17 +21,17 @@ class App extends Component {
   componentWillMount() {
     reqPhotos().then(flickr => {  
       console.log('flickr.photos.photo: ', flickr.photos.photo);
-
+      
       this.setState({
         photos: flickr.photos.photo,
         
       });
     });
+    debugger;
   }
 
   render() { 
-    const photoProp = { photos: this.state.photos };
-    debugger;
+    const photoProp = this.state.photos;
 
     return (
       <div className="App">
