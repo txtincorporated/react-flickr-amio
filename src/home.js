@@ -9,7 +9,7 @@ class Home extends Component {
     return (
       <div>
         <Mapview />
-        <Sheetview photos={this.props.photos} photo={ this.props.photo || null}/>
+        <Sheetview photos={this.props.photos} photo={ this.props.photo }/>
 
       </div>
     );

@@ -15,7 +15,6 @@ import Sheetview from './sheet';
 class App extends Component {
   state = {
     photos: [],
-    photo: null,
 
   };
 
@@ -29,12 +28,7 @@ class App extends Component {
       });
     });
   }
-  setPhoto = e => {
-    this.setState({
-      photo: e.photo,
 
-    });
-  }
   
   render() { 
     return (
