@@ -6,7 +6,6 @@ import { Route, Switch } from 'react-router-dom';
 import { reqPhotos } from './api';
 
 import Nav from './nav';
-import Photoview from './photoview';
 import Home from './home';
 import Mapview from './map';
 import Sheetview from './sheet';
@@ -16,6 +15,7 @@ import Sheetview from './sheet';
 class App extends Component {
   state = {
     photos: [],
+    photo: null,
 
   };
 
@@ -28,19 +28,21 @@ class App extends Component {
         
       });
     });
-    // debugger;
   }
+  setPhoto = e => {
+    this.setState({
+      photo: e.photo,
 
+    });
+  }
+  
   render() { 
-    // const photoProp = this.state.photos;
-
     return (
       <div className="App">
         <Nav />
-        <Photoview />
         <Switch>
           <Route path='/' render={props => (
-            <Home {...props} photos={ this.state.photos } />
+            <Home {...props} photos={ this.state.photos } photo={ this.state.photo }/>
           )} /> 
           <Route path='/map' component={ Mapview } />
           <Route path='/recent' component={ Sheetview } />

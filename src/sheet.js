@@ -1,19 +1,26 @@
 import React, { Component } from 'react';
 
-import Photoset from './photoset';
-import Thumbdisplay from './thumbdisplay';
+import Photoset from './photos';
+import Thumbdisplay from './thumb';
 
 class Sheetview extends Component {
+  handleClick = photo => {
+    this.props.photo = photo;
+
+  }
 
   render() {
     console.log('this.props.photos: ', this.props.photos);  
-    // debugger;
 
     return (
       <div>
         <Photoset>          
           {this.props.photos.map(photo => {
-            return <Thumbdisplay { ...photo } key={ photo.id }/>;
+            return <Thumbdisplay 
+              { ...photo } 
+              key={ photo.id }
+              onClick={ this.handleClick(photo) }
+            />;
 
           })}
         </Photoset> 
