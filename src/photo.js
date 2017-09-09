@@ -11,8 +11,6 @@ class Photoview extends Component {
     
     return (
       <div
-        { ...shown && {style: { display: 'block' }}}
-
         style={{
           display: 'none',
           position: 'fixed',
@@ -21,8 +19,10 @@ class Photoview extends Component {
           background: 'black',
 
         }}  
+
+        { ...shown && {style: { display: 'block' }}}
       >
-        <img src={{ imgURL }}/>
+        <img src={ imgURL }/>
       </div>
     );
   }
