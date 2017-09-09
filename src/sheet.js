@@ -27,8 +27,6 @@ class Sheetview extends Component {
         <Photoview photo={ this.state.photo } shown={ this.state.shown } />
         <Photoset>          
           {this.props.photos.map(photo => {
-            {/* debugger; */}
-
             return <Thumbdisplay 
               { ...photo } 
               photo={ photo }
