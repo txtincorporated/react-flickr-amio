@@ -5,12 +5,11 @@ import Sheetview from './sheet';
 
 class Home extends Component {
   render() {    
-    // debugger;
 
     return (
       <div>
         <Mapview />
-        <Sheetview photos={this.props.photos}/>
+        <Sheetview photos={this.props.photos} photo={ this.props.photo }/>
 
       </div>
     );

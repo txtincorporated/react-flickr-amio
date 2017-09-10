@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 import { FLICKR_CDN } from './api';
+import Photoview from './photo';
 
 class Thumbdisplay extends Component {
   render() {
@@ -16,13 +17,14 @@ class Thumbdisplay extends Component {
           marginRight: '0.125em',
 
         }}
+        onClick={ this.props.clickHandler }
+
       >
         <img 
           alt={ title }
           src={ imgURL }
         
-        />
-        
+        />          
       </div>
     );
   }
