@@ -23,7 +23,7 @@ class Thumbdisplay extends Component {
         <img 
           alt={ title }
           src={ imgURL }
-        
+
         />          
       </div>
     );
