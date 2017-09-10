@@ -5,7 +5,6 @@ import Sheetview from './sheet';
 
 class Home extends Component {
   render() {    
-
     return (
       <div>
         <Mapview />
