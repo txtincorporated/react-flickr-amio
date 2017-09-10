@@ -35,7 +35,8 @@ class Photoview extends Component {
           style={{ 
             marginTop: '2%',
             height: '85%', 
-            
+            border: '1px solid rgba(105, 105, 105, 0.40)',
+
           }}
           onClick={ this.props.clickHandler }
         />
