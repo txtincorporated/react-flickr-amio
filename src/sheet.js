@@ -4,20 +4,21 @@ import Photoset from './photos';
 import Thumbdisplay from './thumb';
 import Photoview from './photo';
 
+const FRESH_STATE = {
+  photo: {
+    farm: '',
+    server: '',
+    id: '',
+    secret: '',
+    title: '',
+  },
+  shown: false,
+};
+
 class Sheetview extends Component {
-  state = {
-    photo: {
-      farm: '',
-      server: '',
-      id: '',
-      secret: '',
-      title: '',
-    },
-    shown: false,
-  }
+  state = FRESH_STATE;
 
   handleClick = photo => {
-    console.log('photo: ', photo);
     this.setState({
       photo: { ...photo },
       shown: true,
@@ -25,12 +26,20 @@ class Sheetview extends Component {
     });
   }
 
-  render() {
-    console.log('this.props.photos: ', this.props.photos);  
+  clearPhoto = () => {
+    this.setState(FRESH_STATE);
+    
+  }
 
+  render() {
     return (
       <div>
-        <Photoview photo={ this.state.photo } shown={ this.state.shown } />
+        <Photoview 
+          photo={ this.state.photo } 
+          shown={ this.state.shown } 
+          clickHandler={ () => this.clearPhoto() }
+
+        />
         <Photoset>          
           {this.props.photos.map(photo => {
             return <Thumbdisplay 

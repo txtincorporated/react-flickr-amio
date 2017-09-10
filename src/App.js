@@ -19,9 +19,7 @@ class App extends Component {
   };
 
   componentWillMount() {
-    reqPhotos().then(flickr => {  
-      console.log('flickr.photos.photo: ', flickr.photos.photo);
-      
+    reqPhotos().then(flickr => {        
       this.setState({
         photos: flickr.photos.photo,
         

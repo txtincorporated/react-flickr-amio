@@ -3,8 +3,8 @@ import React, { Component } from 'react';
 import { FLICKR_CDN } from './api';
 
 class Photoview extends Component {  
+
   render() {
-    console.log('Photoview.props: ', this.props);
     const { shown } = this.props;
     const { farm, server, id, secret, title } = this.props.photo;
     const size = '_b';
@@ -37,6 +37,7 @@ class Photoview extends Component {
             height: '85%', 
             
           }}
+          onClick={ this.props.clickHandler }
         />
       </div>
     );
