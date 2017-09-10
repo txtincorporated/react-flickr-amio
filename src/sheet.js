@@ -6,14 +6,20 @@ import Photoview from './photo';
 
 class Sheetview extends Component {
   state = {
-    photo: null,
+    photo: {
+      farm: '',
+      server: '',
+      id: '',
+      secret: '',
+      title: '',
+    },
     shown: false,
   }
 
   handleClick = photo => {
     console.log('photo: ', photo);
     this.setState({
-      photo: photo,
+      photo: { ...photo },
       shown: true,
 
     });
@@ -29,6 +35,7 @@ class Sheetview extends Component {
           {this.props.photos.map(photo => {
             return <Thumbdisplay 
               { ...photo } 
+              photo={ this.state.photo }
               key={ photo.id }
               clickHandler={ () => this.handleClick(photo) }
 
