@@ -1,18 +1,45 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 
+import { Route, Switch } from 'react-router-dom';
+
+import { reqPhotos } from './api';
+
+import Nav from './nav';
+import Home from './home';
+import Mapview from './map';
+import Sheetview from './sheet';
+
+
+
 class App extends Component {
-  render() {
+  state = {
+    photos: [],
+
+  };
+
+  componentWillMount() {
+    reqPhotos().then(flickr => {        
+      this.setState({
+        photos: flickr.photos.photo,
+        
+      });
+    });
+  }
+
+  
+  render() { 
     return (
       <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
-        </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        <Nav />
+        <Switch>
+          <Route path='/' render={props => (
+            <Home {...props} photos={ this.state.photos } photo={ this.state.photo }/>
+          )} /> 
+          <Route path='/map' component={ Mapview } />
+          <Route path='/recent' component={ Sheetview } />
+
+        </Switch>
       </div>
     );
   }
