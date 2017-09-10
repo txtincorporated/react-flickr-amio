@@ -9,7 +9,15 @@ class Home extends Component {
       <div>
         <Mapview />
         <Sheetview photos={this.props.photos} photo={ this.props.photo }/>
-
+        <div style={{ 
+          position: 'fixed',
+          bottom: '0',
+          margin: '0 0 0 -40%',
+          right: '50%',
+          color: 'rgba(255, 255, 255, 0.5)', 
+          fontSize: '0.5em'
+        }}>©Nathan P. Keene 2017
+        </div>
       </div>
     );
   }
