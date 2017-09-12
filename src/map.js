@@ -14,6 +14,8 @@ class Mapview extends Component {
       <div>
         <Map
           style='mapbox://styles/mapbox/outdoors-v10'
+          center={[-180, 30]}
+          zoom={[1.4875]}
           containerStyle={{
             position: 'fixed',
             top: '1.5em',  
@@ -26,7 +28,7 @@ class Mapview extends Component {
           <Layer
             type='symbol'
             id='marker'
-            layout={{ 'icon-image': 'marker-15' }}
+            layout={{ 'icon-image': 'harbor-15' }}
 
           >
             <Feature coordinates={[-0.481747846041145, 51.3233379650232]}/>
