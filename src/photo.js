@@ -40,6 +40,7 @@ class Photoview extends Component {
           }}
           onClick={ this.props.clickHandler }
         />
+        <span>`${ this.props.title }`</span>
       </div>
     );
   }
