@@ -35,7 +35,7 @@ class Mapview extends Component {
   handlePopupClick = photo => {
     this.setState({
       shown: true,
-
+      
     });
   }
 
@@ -65,12 +65,12 @@ class Mapview extends Component {
             border: '0.25em solid black',
 
           }}
+          onClick={ this.clearPhoto }
         >
           <Layer
             type='symbol'
             id='marker'
             layout={{ 'icon-image': 'attraction-15' }}
-
           >
             {photos.map((photo, index) => (
               <Feature
