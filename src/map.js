@@ -81,7 +81,11 @@ class Mapview extends Component {
               src={ imgURL }
 
             />          
-            <div>{ photo.title }</div>
+            <div
+              style={{width: '150px'}}
+            >
+              { photo.title }
+            </div>
           </Popup>
         )}
       </Map>
