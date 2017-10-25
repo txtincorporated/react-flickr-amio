@@ -3,14 +3,26 @@ import ReactMapboxGl, { Layer, Feature, Popup } from 'react-mapbox-gl';
 
 import { MBOX_TOKEN } from './api';
 
+import { FLICKR_CDN } from './api';
+import Thumbdisplay from './thumb';
+
 const Map = ReactMapboxGl({
   accessToken: MBOX_TOKEN,
 });
 
+// const FRESH_STATE = {
+//   photo: {
+//     farm: '',
+//     server: '',
+//     id: '',
+//     secret: '',
+//     title: '',
+
+//   },
+// };
+
 class Mapview extends Component {
-  state = {
-    photo: null,
-  }
+  state = {photo: null}
 
   handleFeatureClick = (event) => {
     const { index } = event.feature.properties
@@ -26,6 +38,10 @@ class Mapview extends Component {
   render() {
     const { photos } = this.props
     const { photo } = this.state
+
+    const { farm, server, id, secret, title } = photo;
+    const size = '_q';
+    const imgURL = FLICKR_CDN(farm, server, id, secret, size);
 
     return (
       <Map
@@ -59,6 +75,7 @@ class Mapview extends Component {
             coordinates={[photo.longitude, photo.latitude]}
             onClick={this.handlePopupClick}
           >
+            <Thumbdisplay />
             {photo.title}
           </Popup>
         )}
