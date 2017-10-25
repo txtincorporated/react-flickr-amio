@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import { FLICKR_CDN } from './api';
-import Photoview from './photo';
+// import Photoview from './photo';
 
 class Thumbdisplay extends Component {
   render() {
