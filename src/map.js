@@ -10,19 +10,19 @@ const Map = ReactMapboxGl({
   accessToken: MBOX_TOKEN,
 });
 
-// const FRESH_STATE = {
-//   photo: {
-//     farm: '',
-//     server: '',
-//     id: '',
-//     secret: '',
-//     title: '',
+const FRESH_STATE = {
+  photo: {
+    farm: '',
+    server: '',
+    id: '',
+    secret: '',
+    title: '',
 
-//   },
-// };
+  },
+};
 
 class Mapview extends Component {
-  state = {photo: null}
+  state = FRESH_STATE
 
   handleFeatureClick = (event) => {
     const { index } = event.feature.properties
@@ -32,7 +32,8 @@ class Mapview extends Component {
   }
 
   handlePopupClick = () => {
-    this.setState({ photo: null })
+    this.setState( FRESH_STATE )
+
   }
 
   render() {
@@ -69,14 +70,18 @@ class Mapview extends Component {
             />
           ))}
         </Layer>
-        {photo && (
+        {photo.id && (
           <Popup
             anchor="bottom"
             coordinates={[photo.longitude, photo.latitude]}
             onClick={this.handlePopupClick}
           >
-            <Thumbdisplay />
-            {photo.title}
+            <img 
+              alt={ photo.title }
+              src={ imgURL }
+
+            />          
+            <div>{ photo.title }</div>
           </Popup>
         )}
       </Map>
