@@ -10,6 +10,7 @@ class Home extends Component {
         <Mapview
           containerStyle={{ top: '0', bottom: '0', width: '100%', }}
           photos={ this.props.photos }
+          photo={ this.props.photo }
         />
         <div
           style={{

@@ -34,7 +34,7 @@ class App extends Component {
         <Nav />
         <Switch>
           <Route path='/' render={props => (
-            <Home {...props} photos={ this.state.photos } photo={ this.state.photo }/>
+            <Home { ...props } photos={ this.state.photos } photo={ this.state.photo }/>
           )} /> 
           <Route path='/map' component={ Mapview } />
           <Route path='/recent' component={ Sheetview } />
