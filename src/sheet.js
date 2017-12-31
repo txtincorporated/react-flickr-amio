@@ -16,20 +16,11 @@ const FRESH_STATE = {
 };
 
 class Sheetview extends Component {
+  // PROBLEM: after carefully passing photos and photo down to Sheetview from App, you here decide to blow off picking them up in the conmponent that's actually supposed to hub them out to their consumer child components and instead of just passing state to them you first completely re-define it, in which case what was the point of passing it down to begin with?
+  // TODO: `const FRESH_STATE` needs to be declared at App level with `photos` immediately updated on `componentWillMount` just as it now is; thence it will pass down props and receive bindings so that --  using FRESH_STATE -- it always resets at App level
+
   state = FRESH_STATE;
 
-  handleClick = photo => {
-    this.setState({
-      photo: { ...photo },
-      shown: true,
-
-    });
-  }
-
-  clearPhoto = () => {
-    this.setState(FRESH_STATE);
-    
-  }
 
   render() {
     return (

@@ -15,7 +15,8 @@ import Sheetview from './sheet';
 class App extends Component {
   state = {
     photos: [],
-
+    photo: null,
+    
   };
 
   componentWillMount() {
