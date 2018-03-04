@@ -10,20 +10,20 @@ const Map = ReactMapboxGl({
   accessToken: MBOX_TOKEN,
 });
 
-const FRESH_STATE = {
-  photo: {
-    farm: '',
-    server: '',
-    id: '',
-    secret: '',
-    title: '',
-  },
-  shown: false,
+// const FRESH_STATE = {
+//   photo: {
+//     farm: '',
+//     server: '',
+//     id: '',
+//     secret: '',
+//     title: '',
+//   },
+//   shown: false,
 
-};
+// };
 
 class Mapview extends Component {
-  state = FRESH_STATE
+  // state = FRESH_STATE
 
   handleFeatureClick = (event) => {
     const { index } = event.feature.properties
@@ -45,8 +45,8 @@ class Mapview extends Component {
   }
 
   render() {
-    const { photos } = this.props
-    const { photo, shown } = this.state
+    const { photos, photo, shown } = this.props
+    // const { photo, shown } = this.state
 
     const { farm, server, id, secret, title } = photo;
     const size = '_q';
