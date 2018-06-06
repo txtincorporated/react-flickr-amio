@@ -10,13 +10,25 @@ import Home from './home';
 import Mapview from './map';
 import Sheetview from './sheet';
 
+const FRESH_STATE = {
+  photos: [],
+  photo: {
+    farm: '',
+    server: '',
+    id: '',
+    secret: '',
+    title: '',
+  },
+  shown: false,
+};
 
 
 class App extends Component {
-  state = {
-    photos: [],
+  // state = {
+  //   photos: [],
 
-  };
+  // };
+  state = FRESH_STATE;
 
   componentWillMount() {
     reqPhotos().then(flickr => {        
@@ -27,7 +39,13 @@ class App extends Component {
     });
   }
 
-  
+  photoClick = photo => {
+    this.setState({
+      photo: { ...photo },
+      shown: false,
+    });
+  }
+
   render() { 
     return (
       <div className="App">
