@@ -9,7 +9,13 @@ class Home extends Component {
     return (
       <div>
         <Mapview />
-        <Sheetview photos={this.props.photos} photo={ this.props.photo }/>
+        <Sheetview 
+          photos={this.props.photos} 
+          photo={ this.props.photo }
+          clearPhoto=this.props.
+
+        
+        />
         <div style={{ 
           position: 'fixed',
           bottom: '0',

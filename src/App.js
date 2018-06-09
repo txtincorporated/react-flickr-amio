@@ -46,6 +46,11 @@ class App extends Component {
     });
   }
 
+  photoClear = () => {
+    
+
+  }
+
   render() { 
     return (
       <div className="App">
