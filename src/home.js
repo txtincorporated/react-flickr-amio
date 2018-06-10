@@ -12,14 +12,14 @@ class Home extends Component {
       <div>
         <Mapview containerStyle={{ top: '0', bottom: '0', width: '100%', }}/>
         <div style={{ marginTop: '53vh' }}>
-          <Sheetview> 
+          <Sheetview
             photos={ photos } 
             photo={ photo }
             shown={ shown }
             clearPhoto={ photoClear } 
             photoClick={ showPhoto }
           
-          </Sheetview>
+          />
         </div>
 
         <div style={{ 
