@@ -7,21 +7,23 @@ import Photoview from './photo';
 class Sheetview extends Component {
 
   render() {
+    const { photo, shown } = this.props;
+
     return (
       <div>
         <Photoview 
-          photo={ this.props.photo } 
-          shown={ this.props.shown } 
-          clickHandler={ () => this.props.clearPhoto() }
+          photo={ photo } 
+          shown={ shown } 
+          clickHandler={ () => this.props.clearPhoto }
 
         />
         <Photoset>          
-          {this.props.photos.map(photo => {
+          {this.props.photos.map(pic => {
             return <Thumbdisplay 
-              { ...photo } 
-              photo={ this.props.photo }
-              key={ photo.id }
-              clickHandler={ () => this.props.photoClick(photo) }
+              { ...pic } 
+              photo={ pic }
+              key={ pic.id }
+              clickHandler={ this.props.photoClick( pic )}
 
             />;
           })}

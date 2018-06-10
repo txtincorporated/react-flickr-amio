@@ -12,8 +12,8 @@ class Home extends Component {
         <Sheetview 
           photos={this.props.photos} 
           photo={ this.props.photo }
-          clearPhoto=this.props.
-
+          clearPhoto={ this.props.photoClear } 
+          photoClick={ this.props.showPhoto }
         
         />
         <div style={{ 

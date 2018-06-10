@@ -28,7 +28,7 @@ class App extends Component {
   //   photos: [],
 
   // };
-  state = FRESH_STATE;
+  // state = FRESH_STATE;
 
   componentWillMount() {
     reqPhotos().then(flickr => {        
@@ -39,16 +39,16 @@ class App extends Component {
     });
   }
 
-  photoClick = photo => {
+  photoClick = pic => {
     this.setState({
-      photo: { ...photo },
+      photo: { ...pic },
       shown: false,
     });
   }
 
-  photoClear = () => {
+  photoClose = () => {
+    this.setState(FRESH_STATE);
     
-
   }
 
   render() { 
@@ -57,7 +57,13 @@ class App extends Component {
         <Nav />
         <Switch>
           <Route path='/' render={props => (
-            <Home {...props} photos={ this.state.photos } photo={ this.state.photo }/>
+            <Home {...props} 
+              photos={ this.state.photos } 
+              photo={ this.state.photo }
+              photoClear={ this.photoClose }
+              showPhoto={ this.photoClick }
+
+            />
           )} /> 
           <Route path='/map' component={ Mapview } />
           <Route path='/recent' component={ Sheetview } />
