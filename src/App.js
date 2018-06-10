@@ -24,10 +24,10 @@ const FRESH_STATE = {
 
 
 class App extends Component {
-  // state = {
-  //   photos: [],
+  state = {
+    photos: [],
 
-  // };
+  };
   // state = FRESH_STATE;
 
   componentWillMount() {
