@@ -10,13 +10,21 @@ import Home from './home';
 import Mapview from './map';
 import Sheetview from './sheet';
 
+const FRESH_STATE = {
+  photos: [],
+  photo: {
+    farm: '',
+    server: '',
+    id: '',
+    secret: '',
+    title: '',
+  },
+  shown: false,
+};
 
 
 class App extends Component {
-  state = {
-    photos: [],
-
-  };
+  state = FRESH_STATE;
 
   componentWillMount() {
     reqPhotos().then(flickr => {        
@@ -27,14 +35,42 @@ class App extends Component {
     });
   }
 
-  
+  photoClick = pic => {
+    this.setState({
+      photo: { ...pic },
+      shown: true,
+
+    });
+  }
+
+  photoClose = () => {
+    this.setState({
+      photo: {
+        farm: '',
+        server: '',
+        id: '',
+        secret: '',
+        title: '',
+      },
+      shown: false,
+
+    });    
+  }
+
   render() { 
     return (
       <div className="App">
         <Nav />
         <Switch>
           <Route path='/' render={props => (
-            <Home {...props} photos={ this.state.photos } photo={ this.state.photo }/>
+            <Home {...props} 
+              photos={ this.state.photos } 
+              photo={ this.state.photo }
+              shown={ this.state.shown }
+              photoClear={ this.photoClose }
+              showPhoto={ this.photoClick }
+
+            />
           )} /> 
           <Route path='/map' component={ Mapview } />
           <Route path='/recent' component={ Sheetview } />

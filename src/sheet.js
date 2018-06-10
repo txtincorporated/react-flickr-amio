@@ -4,50 +4,34 @@ import Photoset from './photos';
 import Thumbdisplay from './thumb';
 import Photoview from './photo';
 
-const FRESH_STATE = {
-  photo: {
-    farm: '',
-    server: '',
-    id: '',
-    secret: '',
-    title: '',
-  },
-  shown: false,
-};
-
 class Sheetview extends Component {
-  state = FRESH_STATE;
-
-  handleClick = photo => {
-    this.setState({
-      photo: { ...photo },
-      shown: true,
-
-    });
-  }
-
-  clearPhoto = () => {
-    this.setState(FRESH_STATE);
     
-  }
+  // passClick = pic => {
+  //   console.log('passclick pic:  ', pic)
+  //   this.props.photoClick( pic )
+  // }
 
   render() {
+    const { photo, shown } = this.props;
+
     return (
       <div>
         <Photoview 
-          photo={ this.state.photo } 
-          shown={ this.state.shown } 
-          clickHandler={ () => this.clearPhoto() }
+          photo={ photo } 
+          shown={ shown } 
+          clickHandler={ this.props.clearPhoto }
 
         />
         <Photoset>          
-          {this.props.photos.map(photo => {
+          {this.props.photos.map(pic => {
             return <Thumbdisplay 
-              { ...photo } 
-              photo={ this.state.photo }
-              key={ photo.id }
-              clickHandler={ () => this.handleClick(photo) }
+              { ...pic } 
+              photo={ pic }
+              key={ pic.id }
+              clickHandler={ () => {
+                this.props.photoClick( pic )
 
+              }}
             />;
           })}
         </Photoset> 
