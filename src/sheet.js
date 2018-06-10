@@ -23,7 +23,7 @@ class Sheetview extends Component {
               { ...pic } 
               photo={ pic }
               key={ pic.id }
-              clickHandler={ this.props.photoClick( pic )}
+              clickHandler={ this.props.photoClick }
 
             />;
           })}
