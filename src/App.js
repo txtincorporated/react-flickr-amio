@@ -24,10 +24,6 @@ const FRESH_STATE = {
 
 
 class App extends Component {
-  // state = {
-  //   photos: [],
-
-  // };
   state = FRESH_STATE;
 
   componentWillMount() {
@@ -40,16 +36,25 @@ class App extends Component {
   }
 
   photoClick = pic => {
-    console.log('THIS IS PHOTOCLICK!');
     this.setState({
       photo: { ...pic },
-      shown: false,
+      shown: true,
+
     });
   }
 
   photoClose = () => {
-    this.setState(FRESH_STATE);
-    
+    this.setState({
+      photo: {
+        farm: '',
+        server: '',
+        id: '',
+        secret: '',
+        title: '',
+      },
+      shown: false,
+
+    });    
   }
 
   render() { 
@@ -61,6 +66,7 @@ class App extends Component {
             <Home {...props} 
               photos={ this.state.photos } 
               photo={ this.state.photo }
+              shown={ this.state.shown }
               photoClear={ this.photoClose }
               showPhoto={ this.photoClick }
 

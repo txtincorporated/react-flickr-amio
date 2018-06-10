@@ -5,6 +5,11 @@ import Thumbdisplay from './thumb';
 import Photoview from './photo';
 
 class Sheetview extends Component {
+    
+  // passClick = pic => {
+  //   console.log('passclick pic:  ', pic)
+  //   this.props.photoClick( pic )
+  // }
 
   render() {
     const { photo, shown } = this.props;
@@ -14,7 +19,7 @@ class Sheetview extends Component {
         <Photoview 
           photo={ photo } 
           shown={ shown } 
-          clickHandler={ () => this.props.clearPhoto }
+          clickHandler={ this.props.clearPhoto }
 
         />
         <Photoset>          
@@ -23,8 +28,10 @@ class Sheetview extends Component {
               { ...pic } 
               photo={ pic }
               key={ pic.id }
-              clickHandler={ this.props.photoClick }
+              clickHandler={ () => {
+                this.props.photoClick( pic )
 
+              }}
             />;
           })}
         </Photoset> 

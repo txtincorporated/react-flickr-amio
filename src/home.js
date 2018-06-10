@@ -5,15 +5,18 @@ import Sheetview from './sheet';
 import App from './App';
 
 class Home extends Component {
-  render() {    
+  render() {
+    const { photos, photo, shown, photoClear, showPhoto } = this.props
+
     return (
       <div>
         <Mapview />
         <Sheetview 
-          photos={this.props.photos} 
-          photo={ this.props.photo }
-          clearPhoto={ this.props.photoClear } 
-          photoClick={ this.props.showPhoto }
+          photos={ photos } 
+          photo={ photo }
+          shown={ shown }
+          clearPhoto={ photoClear } 
+          photoClick={ showPhoto }
         
         />
         <div style={{ 
