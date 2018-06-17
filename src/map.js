@@ -24,12 +24,16 @@ const Map = ReactMapboxGl({
 
 class Mapview extends Component {
   // state = FRESH_STATE
+  pic = null
 
   handleFeatureClick = (event) => {
     const { index } = event.feature.properties
     const photo = this.props.photos[index]
 
-    this.setState({ photo })
+    console.log('handleFeatureClick photo', photo );
+
+    this.pic = photo 
+
   }
 
   handlePopupClick = photo => {
@@ -39,13 +43,13 @@ class Mapview extends Component {
     });
   }
 
-  clearPhoto = () => {
-    this.setState(FRESH_STATE);
+  // clearPhoto = () => {
+  //   this.setState(FRESH_STATE);
     
-  }
+  // }
 
   render() {
-    const { photos, photo, shown } = this.props
+    const { photos, photo, shown, photoClear } = this.props
     // const { photo, shown } = this.state
 
     const { farm, server, id, secret, title } = photo;
@@ -65,7 +69,7 @@ class Mapview extends Component {
             border: '0.25em solid black',
 
           }}
-          onClick={ this.clearPhoto }
+          onClick={ photoClear }
         >
           <Layer
             type='symbol'
@@ -86,7 +90,10 @@ class Mapview extends Component {
             <Popup
               anchor="bottom"
               coordinates={[photo.longitude, photo.latitude]}
-              onClick={this.handlePopupClick}
+              onClick={() => {
+                this.props.photoClick( this.pic )
+
+              }}
 
             >
               <img 
@@ -106,7 +113,7 @@ class Mapview extends Component {
         <Photoview 
           photo={ photo } 
           shown={ shown } 
-          clickHandler={ () => this.clearPhoto() }
+          clickHandler={ photoClear }
 
         />
       </div>
