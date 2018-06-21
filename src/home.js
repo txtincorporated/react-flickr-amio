@@ -15,8 +15,6 @@ class Home extends Component {
           photos={ photos }
           photo={ photo }
           shown={ shown }
-          clearPhoto={ photoClear } 
-          photoClick={ showPhoto }
 
         />
         <div

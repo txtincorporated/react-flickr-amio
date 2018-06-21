@@ -36,7 +36,6 @@ class App extends Component {
   }
 
   photoClick = pic => {
-    console.log( 'photoClick photo:  ', pic );
     this.setState({
       photo: { ...pic },
       shown: true,
