@@ -6,7 +6,7 @@ import Photoview from './photo';
 
 class Sheetview extends Component {
   render() {
-    const { photo, shown, photoClick, clearPhoto } = this.props;
+    const { photos, photo, shown, photoClick, clearPhoto } = this.props;
 
     return (
       <div>
@@ -17,7 +17,7 @@ class Sheetview extends Component {
 
         />
         <Photoset>          
-          {this.props.photos.map(pic => {
+          {photos.map(pic => {
             return <Thumbdisplay 
               { ...pic } 
               photo={ pic }
