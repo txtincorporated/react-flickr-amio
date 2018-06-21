@@ -16,25 +16,12 @@ class Mapview extends Component {
     const { index } = event.feature.properties
     const photo = this.props.photos[index]
 
-    // this.setState({ photo })
     this.props.photoSetter( photo )
+
   }
 
-  // handlePopupClick = photo => {
-  //   this.setState({
-  //     shown: true,
-      
-  //   });
-  // }
-
-  // clearPhoto = () => {
-  //   this.setState(FRESH_STATE);
-    
-  // }
-
   render() {
-    const { photos, photo, shown } = this.props
-    // const { photo, shown } = this.state
+    const { photos, photo, shown, photoShow, clearPhoto } = this.props
 
     const { farm, server, id, secret, title } = photo;
     const size = '_q';
@@ -53,7 +40,7 @@ class Mapview extends Component {
             border: '0.25em solid black',
 
           }}
-          onClick={ this.clearPhoto }
+          onClick={ clearPhoto }
         >
           <Layer
             type='symbol'
@@ -74,7 +61,7 @@ class Mapview extends Component {
             <Popup
               anchor="bottom"
               coordinates={[photo.longitude, photo.latitude]}
-              onClick={this.props.photoShow}
+              onClick={ photoShow }
 
             >
               <img 
@@ -83,7 +70,7 @@ class Mapview extends Component {
 
               />          
               <div
-                style={{width: '150px'}}
+                style={{ width: '150px' }}
               >
                 { photo.title }
 
@@ -94,7 +81,7 @@ class Mapview extends Component {
         <Photoview 
           photo={ photo } 
           shown={ shown } 
-          clickHandler={ this.clearPhoto }
+          clickHandler={ clearPhoto }
 
         />
       </div>
