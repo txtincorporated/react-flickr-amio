@@ -6,7 +6,7 @@ import App from './App';
 
 class Home extends Component {
   render() {
-    const { photos, photo, shown, photoClear, showPhoto } = this.props
+    const { photos, photo, shown, setPhoto, showPhoto, setShowPhoto, photoClear } = this.props
 
     return (
       <div>
@@ -15,6 +15,9 @@ class Home extends Component {
           photos={ photos }
           photo={ photo }
           shown={ shown }
+          clearPhoto={ photoClear } 
+          photoSetter={ setPhoto }
+          photoShow={ showPhoto }
 
         />
         <div
@@ -26,8 +29,8 @@ class Home extends Component {
             photos={ photos } 
             photo={ photo }
             shown={ shown }
+            photoClick={ setShowPhoto }
             clearPhoto={ photoClear } 
-            photoClick={ showPhoto }
           
           />
         </div>

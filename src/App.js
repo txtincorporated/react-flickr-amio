@@ -35,12 +35,25 @@ class App extends Component {
     });
   }
 
-  photoClick = pic => {
+  photoSetter = pic => {
+    console.log('photoSetter photo:  ', pic)
     this.setState({
       photo: { ...pic },
+
+    })
+  }
+
+  photoShow = () => {
+    this.setState({
       shown: true,
 
-    });
+    })
+  }
+
+  photoClick = pic => {
+    this.photoSetter( pic )      
+    this.photoShow()
+    
   }
 
   photoClose = () => {
@@ -68,7 +81,12 @@ class App extends Component {
               photo={ this.state.photo }
               shown={ this.state.shown }
               photoClear={ this.photoClose }
-              showPhoto={ this.photoClick }
+              setPhoto={ pic => {
+                this.photoSetter( pic )
+                
+              }}
+              showPhoto={ this.photoShow }
+              setShowPhoto={ this.photoClick }
 
             />
           )} /> 
