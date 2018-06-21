@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 
 import Mapview from './map';
 import Sheetview from './sheet';
-import App from './App';
 
 class Home extends Component {
   render() {

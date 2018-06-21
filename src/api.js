@@ -1,5 +1,5 @@
 const FLICKR_KEY = '49ab98f0131176cf7168bf57ca213ff9';
-const FLICKR_SECRET = 'a475bf30b9544209';
+// const FLICKR_SECRET = 'a475bf30b9544209';
 
 const FLICKR = 'https://api.flickr.com/services/rest';
 

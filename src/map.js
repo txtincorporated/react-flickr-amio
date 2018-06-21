@@ -22,7 +22,6 @@ class Mapview extends Component {
 
   render() {
     const { photos, photo, shown, photoShow, clearPhoto } = this.props
-
     const { farm, server, id, secret, title } = photo;
     const size = '_q';
     const imgURL = FLICKR_CDN(farm, server, id, secret, size);
@@ -30,7 +29,8 @@ class Mapview extends Component {
     return (
       <div>
         <Map
-          style='mapbox://styles/mapbox/outdoors-v10'
+        // eslint-disable-next-line
+          style={'mapbox://styles/mapbox/outdoors-v10'}
           zoom={[1.4875]}
           containerStyle={{
             position: 'fixed',
@@ -57,7 +57,7 @@ class Mapview extends Component {
               />
             ))}
           </Layer>
-          {photo.id && (
+          {id && (
             <Popup
               anchor="bottom"
               coordinates={[photo.longitude, photo.latitude]}
@@ -65,14 +65,14 @@ class Mapview extends Component {
 
             >
               <img 
-                alt={ photo.title }
+                alt={ title }
                 src={ imgURL }
 
               />          
               <div
                 style={{ width: '150px' }}
               >
-                { photo.title }
+                { title }
 
               </div>
             </Popup>
