@@ -71,27 +71,52 @@ class App extends Component {
   }
 
   render() { 
+    const { photos, photo, shown } = this.state
+    const { setPhoto, showPhoto, photoClick, setShowPhoto, photoClose } = this
+
     return (
       <div className="App">
         <Nav />
         <Switch>
+          <Route path='/recent' render={ props => (
+            <Sheetview {...props}            
+              photos={ photos } 
+              photo={ photo }
+              shown={ shown }
+              clearPhoto={ photoClose }
+              photoClick={ pic => {
+                this.photoClick( pic )
+                
+              }}
+            />
+          )}/>
+          <Route path='/map' render={ props => (
+            <Mapview
+              containerStyle={{ top: '0', bottom: '0', width: '100%', }}
+              photos={ photos }
+              photo={ photo }
+              shown={ shown }
+              clearPhoto={ photoClose } 
+              photoSetter={ setPhoto }
+              photoShow={ showPhoto }
+    
+            />
+          )}/>
           <Route path='/' render={props => (
             <Home {...props} 
-              photos={ this.state.photos } 
-              photo={ this.state.photo }
-              shown={ this.state.shown }
-              photoClear={ this.photoClose }
+              photos={ photos } 
+              photo={ photo }
+              shown={ shown }
+              photoClear={ photoClose }
               setPhoto={ pic => {
                 this.photoSetter( pic )
                 
               }}
-              showPhoto={ this.photoShow }
-              setShowPhoto={ this.photoClick }
+              showPhoto={ photoShow }
+              setShowPhoto={ photoClick }
 
             />
           )} /> 
-          <Route path='/map' component={ Mapview } />
-          <Route path='/recent' component={ Sheetview } />
 
         </Switch>
       </div>
