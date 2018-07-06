@@ -15,18 +15,21 @@ class Nav extends Component {
       >
         NAV
         <div>
-          <Link>
-          
+          <Link to={ '/' }>
+            Home
+            
           </Link>
         </div>
         <div>
-          <Link>
-          
+          <Link to={ '/map' }>
+            Map
+            
           </Link>
         </div>
         <div>
-          <Link>
-          
+          <Link to={ '/recent' }>
+            Recent
+            
           </Link>
         </div>
       </div>
