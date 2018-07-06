@@ -72,7 +72,7 @@ class App extends Component {
 
   render() { 
     const { photos, photo, shown } = this.state
-    const { setPhoto, showPhoto, photoClick, setShowPhoto, photoClose } = this
+    const { setPhoto, photoShow, photoClick, setShowPhoto, photoClose } = this
 
     return (
       <div className="App">
@@ -98,7 +98,7 @@ class App extends Component {
               shown={ shown }
               clearPhoto={ photoClose } 
               photoSetter={ setPhoto }
-              photoShow={ showPhoto }
+              showPhoto={ photoShow }
     
             />
           )}/>

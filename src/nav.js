@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link, withRouter } from 'react-router-dom';
 
 class Nav extends Component {
   render() {
@@ -17,19 +18,19 @@ class Nav extends Component {
         <div>
           <Link to={ '/' }>
             Home
-            
+
           </Link>
         </div>
         <div>
           <Link to={ '/map' }>
             Map
-            
+
           </Link>
         </div>
         <div>
           <Link to={ '/recent' }>
             Recent
-            
+
           </Link>
         </div>
       </div>
