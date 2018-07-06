@@ -14,6 +14,21 @@ class Nav extends Component {
         }}
       >
         NAV
+        <div>
+          <Link>
+          
+          </Link>
+        </div>
+        <div>
+          <Link>
+          
+          </Link>
+        </div>
+        <div>
+          <Link>
+          
+          </Link>
+        </div>
       </div>
     );
   }
