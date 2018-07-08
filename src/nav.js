@@ -14,24 +14,25 @@ class Nav extends Component {
 
         }}
       >
-        NAV
         <div>
-          <Link to={ '/' }>
-            Home
+          <div style={{ display: 'inline', }}>
+            <Link to={ '/' }>
+              Home
 
-          </Link>
-        </div>
-        <div>
-          <Link to={ '/map' }>
-            Map
+            </Link>
+          </div>
+          <div style={{ display: 'inline', }}>
+            <Link to={ '/map' }>
+              Map
 
-          </Link>
-        </div>
-        <div>
-          <Link to={ '/recent' }>
-            Recent
+            </Link>
+          </div>
+          <div style={{ display: 'inline', }}>
+            <Link to={ '/recent' }>
+              Recent
 
-          </Link>
+            </Link>
+          </div>
         </div>
       </div>
     );

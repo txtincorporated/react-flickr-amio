@@ -14,14 +14,14 @@ const Map = ReactMapboxGl({
 class Mapview extends Component {
   handleFeatureClick = (event) => {
     const { index } = event.feature.properties
-    const photo = this.props.photos[index]
+    const pic = this.props.photos[index]
 
-    this.props.photoSetter( photo )
+    this.props.photoSetter( pic )
 
   }
 
   render() {
-    const { photos, photo, shown, photoShow, clearPhoto } = this.props
+    const { photos, photo, shown, clearPhoto, setPhoto, showPhoto, } = this.props
     const { farm, server, id, secret, title } = photo;
     const size = '_q';
     const imgURL = FLICKR_CDN(farm, server, id, secret, size);
@@ -61,7 +61,7 @@ class Mapview extends Component {
             <Popup
               anchor="bottom"
               coordinates={[photo.longitude, photo.latitude]}
-              onClick={ photoShow }
+              onClick={ showPhoto }
 
             >
               <img 

@@ -46,12 +46,14 @@ class App extends Component {
   photoShow = () => {
     this.setState({
       shown: true,
-
+      
     })
   }
 
   photoClick = pic => {
+    console.log('photoClick calling photoSetter')
     this.photoSetter( pic )      
+    console.log('photoClick calling photoShow with pic: ', pic)
     this.photoShow()
     
   }
@@ -72,7 +74,7 @@ class App extends Component {
 
   render() { 
     const { photos, photo, shown } = this.state
-    const { setPhoto, photoShow, photoClick, setShowPhoto, photoClose } = this
+    const { photoClose, photoClick, photoShow, photoSetter, setShowPhoto,  } = this
 
     return (
       <div className="App">
@@ -91,7 +93,7 @@ class App extends Component {
             />
           )}/>
           <Route path='/map' render={ props => (
-            <Mapview
+            <Mapview {...props}
               containerStyle={{ top: '0', bottom: '0', width: '100%', }}
               photos={ photos }
               photo={ photo }
