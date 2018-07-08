@@ -97,8 +97,11 @@ class App extends Component {
               photo={ photo }
               shown={ shown }
               clearPhoto={ photoClose } 
-              photoSetter={ setPhoto }
-              showPhoto={ photoShow }
+              photoSetter={ pic => {
+                this.photoSetter( pic )
+
+              }}
+              photoShow={ photoShow }
     
             />
           )}/>
