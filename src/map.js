@@ -54,7 +54,7 @@ class Mapview extends Component {
             <Popup
               anchor="bottom"
               coordinates={[photo.longitude, photo.latitude]}
-              onClick={ showPhoto }
+              onClick={ photoShow }
 
             >
               <img 
