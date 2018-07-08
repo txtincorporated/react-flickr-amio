@@ -21,7 +21,11 @@ class Mapview extends Component {
   }
 
   render() {
+<<<<<<< HEAD
     const { photos, photo, shown, clearPhoto, setPhoto, showPhoto, } = this.props
+=======
+    const { containerStyle, photos, photo, shown, photoShow, clearPhoto } = this.props
+>>>>>>> containerStyle
     const { farm, server, id, secret, title } = photo;
     const size = '_q';
     const imgURL = FLICKR_CDN(farm, server, id, secret, size);
@@ -32,14 +36,7 @@ class Mapview extends Component {
         // eslint-disable-next-line
           style={'mapbox://styles/mapbox/outdoors-v10'}
           zoom={[1.4875]}
-          containerStyle={{
-            position: 'fixed',
-            top: '1.5em',
-            height: '60vh',
-            width: '100vw',
-            border: '0.25em solid black',
-
-          }}
+          containerStyle={ containerStyle }
           onClick={ clearPhoto }
         >
           <Layer
