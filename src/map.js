@@ -21,11 +21,7 @@ class Mapview extends Component {
   }
 
   render() {
-<<<<<<< HEAD
-    const { photos, photo, shown, clearPhoto, setPhoto, showPhoto, } = this.props
-=======
     const { containerStyle, photos, photo, shown, photoShow, clearPhoto } = this.props
->>>>>>> containerStyle
     const { farm, server, id, secret, title } = photo;
     const size = '_q';
     const imgURL = FLICKR_CDN(farm, server, id, secret, size);
