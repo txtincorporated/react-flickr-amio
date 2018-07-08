@@ -70,9 +70,18 @@ class App extends Component {
     });    
   }
 
+  containerDefault = {
+    position: 'fixed',
+    top: '1.5em',
+    height: '100vh',
+    width: '100vw',
+    border: '0.25em solid black',
+
+  }
+
   render() { 
     const { photos, photo, shown } = this.state
-    const { setPhoto, photoShow, photoClick, setShowPhoto, photoClose } = this
+    const { containerDefault, setPhoto, photoShow, photoClick, setShowPhoto, photoClose } = this
 
     return (
       <div className="App">
@@ -92,7 +101,7 @@ class App extends Component {
           )}/>
           <Route path='/map' render={ props => (
             <Mapview
-              containerStyle={{ top: '0', bottom: '0', width: '100%', }}
+              containerStyle={ containerDefault }
               photos={ photos }
               photo={ photo }
               shown={ shown }

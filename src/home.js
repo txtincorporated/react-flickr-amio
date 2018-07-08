@@ -10,7 +10,14 @@ class Home extends Component {
     return (
       <div>
         <Mapview
-          containerStyle={{ top: '0', bottom: '0', width: '100%', }}
+          containerStyle={{
+            position: 'fixed',
+            top: '1.5em',
+            height: '60vh',
+            width: '100vw',
+            border: '0.25em solid black',
+
+          }}
           photos={ photos }
           photo={ photo }
           shown={ shown }
