@@ -36,7 +36,6 @@ class App extends Component {
   }
 
   photoSetter = pic => {
-    console.log('photoSetter photo:  ', pic)
     this.setState({
       photo: { ...pic },
 
@@ -51,9 +50,7 @@ class App extends Component {
   }
 
   photoClick = pic => {
-    console.log('photoClick calling photoSetter')
     this.photoSetter( pic )      
-    console.log('photoClick calling photoShow with pic: ', pic)
     this.photoShow()
     
   }
