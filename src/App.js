@@ -80,7 +80,7 @@ class App extends Component {
 
   render() { 
     const { photos, photo, shown } = this.state
-    const { containerDefault, setPhoto, photoShow, photoClick, setShowPhoto, photoClose } = this
+    const { containerDefault, photoShow, photoClick, photoClose } = this
 
     return (
       <div className="App">
