@@ -1,11 +1,11 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 import { shallow, mount, render } from 'Enzyme';
 import Thumbdisplay from './thumb';
-
-const wrapper = shallow(<Thumbdisplay />);
-
 import { photoClick } from './App';
 
+const wrapper = shallow( Thumbdisplay );
+
+const photo = {};  //TODO:  Get photo object from query results in Postman
 
 
