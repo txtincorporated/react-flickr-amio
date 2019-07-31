@@ -3,21 +3,41 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "mapbox-gl": "^0.39.1",
+    "@babel/core": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
+    "mapbox-gl": "^0.40.1",
+    "raf": "3.4.1",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
     "react-mapbox-gl": "^2.4.0",
     "react-router": "^4.2.0",
     "react-router-dom": "^4.2.2",
-    "react-scripts": "1.0.12",
+    "react-scripts": "1.0.12"
+  },
+  "babel": {
+    "plugins": [
+      "@babel/plugin-proposal-class-properties"
+    ]
   },
   "jest": {
-    "setupTestFrameworkScriptFile": "./configEnzyme.js"
+    "setupFilesAfterEnv": [
+      "raf/polyfill",
+      "<rootDir>/setUpTests.js"
+    ]
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
+    "test": "jest",
     "eject": "react-scripts eject"
+  },
+  "devDependencies": {
+    "@babel/plugin-proposal-class-properties": "^7.5.5",
+    "@babel/preset-react": "^7.0.0",
+    "babel-jest": "^24.8.0",
+    "enzyme": "3.10.0",
+    "enzyme-adapter-react-15": "15.5.0",
+    "jest-cli": "^24.8.0",
+    "react-test-renderer": "^15.6.2"
   }
 }
