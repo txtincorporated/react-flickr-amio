@@ -22,7 +22,7 @@
   "jest": {
     "setupFilesAfterEnv": [
       "raf/polyfill",
-      "<rootDir>/setUpTests.js"
+      "<rootDir>/setupTests.js"
     ]
   },
   "scripts": {
@@ -34,10 +34,8 @@
   "devDependencies": {
     "@babel/plugin-proposal-class-properties": "^7.5.5",
     "@babel/preset-react": "^7.0.0",
-    "babel-jest": "^24.8.0",
     "enzyme": "3.10.0",
-    "enzyme-adapter-react-15": "15.5.0",
-    "jest-cli": "^24.8.0",
+    "enzyme-adapter-react-15": "^1.0.4",
     "react-test-renderer": "^15.6.2"
   }
 }
