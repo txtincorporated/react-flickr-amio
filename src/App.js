@@ -26,7 +26,7 @@ const FRESH_STATE = {
 class App extends Component {
   state = FRESH_STATE;
   
-  componentWillMount() {
+  componentDidMount() {
     reqPhotos().then(flickr => {        
       this.setState({
         photos: flickr.photos.photo,
@@ -136,3 +136,4 @@ class App extends Component {
 }
 
 export default App;
+export { App }; //For unit testing with Enzyme shallow renders

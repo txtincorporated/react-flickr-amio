@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import Photoset from './photos';
-import Thumbdisplay from './thumb';
+import { Thumbdisplay } from './thumb';
 import Photoview from './photo';
 
 class Sheetview extends Component {

@@ -30,3 +30,4 @@ class Thumbdisplay extends Component {
 }
 
 export default Thumbdisplay;
+export { Thumbdisplay };
