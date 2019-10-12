@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 
 import { Route, Switch } from 'react-router-dom';
 
-import { reqPhotos } from './api';
+import { apiParams } from './api';
 
 import Nav from './nav';
 import Home from './home';
@@ -27,14 +27,22 @@ class App extends Component {
   state = FRESH_STATE;
   
   componentDidMount() {
-    reqPhotos().then(flickr => {        
+    this.reqPhotos().then(flickr => {        
       this.setState({
         photos: flickr.photos.photo,
         
       });
     });
   }
-
+    
+    reqPhotos = async () => {
+      // let startDate = (Date.now() - 86400000)/1000 | 0;
+    
+      const res = await fetch( apiParams );
+      return await res.json();
+    
+    };
+  
   photoSetter = pic => {
     this.setState({
       photo: { ...pic },
@@ -80,7 +88,7 @@ class App extends Component {
 
   render() { 
     const { photos, photo, shown } = this.state
-    const { containerDefault, setPhoto, photoShow, photoClick, setShowPhoto, photoClose } = this
+    const { containerDefault, photoShow, photoClose, photoClick } = this
 
     return (
       <div className="App">

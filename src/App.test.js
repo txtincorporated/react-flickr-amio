@@ -1,7 +1,7 @@
-import React, { fetch } from 'react';
+import React from 'react';
 // import ReactDOM from 'react-dom';
 
-import { shallow, configure } from 'enzyme';
+import { shallow } from 'enzyme';
 
 import { App } from './App';
 
@@ -13,7 +13,9 @@ describe('Smoke test App', () => {
 
     //  Do fetch mock here 
      
-    return shallow(<App />);
+    const wrapper = shallow(<App />);
+
+    expect(wrapper.exists()).toBe( true );
   
   }
   );
