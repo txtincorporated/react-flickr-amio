@@ -92,11 +92,51 @@ class App extends Component {
 
     return (
       <div className="App">
+        <Nav />
         <Switch>
-          <Route path = '/' render = {() => ( 
-            <Nav />
+          <Route path='/recent' render={ props => (
+            <Sheetview {...props}            
+              photos={ photos } 
+              photo={ photo }
+              shown={ shown }
+              clearPhoto={ photoClose }
+              photoClick={ pic => {
+                this.photoClick( pic )
+                
+              }}
+            />
+          )}/>
+          <Route path='/map' render={ props => (
+            <Mapview
+              containerStyle={ containerDefault }
+              photos={ photos }
+              photo={ photo }
+              shown={ shown }
+              clearPhoto={ photoClose } 
+              photoSetter={ pic => {
+                this.photoSetter( pic )
 
-           )}/> 
+              }}
+              photoShow={ photoShow }
+    
+            />
+          )}/>
+          <Route path='/' render={props => (
+            <Home {...props} 
+              photos={ photos } 
+              photo={ photo }
+              shown={ shown }
+              photoClear={ photoClose }
+              setPhoto={ pic => {
+                this.photoSetter( pic )
+                
+              }}
+              showPhoto={ photoShow }
+              setShowPhoto={ photoClick }
+
+            />
+          )} /> 
+
         </Switch>
       </div>
     );
