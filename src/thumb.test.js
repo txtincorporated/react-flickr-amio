@@ -7,6 +7,8 @@ import { Thumbdisplay } from './thumb';
 //const photo = {};  //TODO:  Get photo object from query results in Postman
 
 it('renders without crashing', () => {
-  shallow(<Thumbdisplay />);
+  const wrapper = shallow(<Thumbdisplay />);
+  
+  expect(wrapper.exists()).toBe( true );
 
 })

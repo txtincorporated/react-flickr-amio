@@ -10,14 +10,10 @@ describe('Smoke test App', () => {
   it('renders without crashing', () => {
   //   const div = document.createElement('div');
   //   ReactDOM.render(App, div);
-
-    //  Do fetch mock here 
      
     const wrapper = shallow(<App />);
 
     expect(wrapper.exists()).toBe( true );
   
-  }
-  );
-
+  });
 });
