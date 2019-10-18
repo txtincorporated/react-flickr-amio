@@ -5,7 +5,6 @@ import { Route, Switch }  from 'react-router-dom';
 
 import { apiParams } from './api';
 
-import Nav from './nav';
 import Home from './home';
 import Mapview from './map';
 import Sheetview from './sheet';
@@ -92,7 +91,6 @@ class App extends Component {
 
     return (
       <div className="App">
-        <Nav />
         <Switch>
           <Route path='/recent' render={ props => (
             <Sheetview {...props}            
