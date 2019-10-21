@@ -30,4 +30,4 @@ class Thumbdisplay extends Component {
 }
 
 export default Thumbdisplay;
-export { Thumbdisplay }; // for shallow renders
+export { Thumbdisplay };
