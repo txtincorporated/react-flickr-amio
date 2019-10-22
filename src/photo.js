@@ -5,8 +5,8 @@ import { FLICKR_CDN } from './api';
 class Photoview extends Component {  
 
   render() {
-    const { shown } = this.props;
-    const { farm, server, id, secret, title } = this.props.photo;
+    const { photo, shown, clickHandler } = this.props;
+    const { farm, server, id, secret, title } = photo;
     const size = '_b';
     const imgURL = FLICKR_CDN(farm, server, id, secret, size);
 
@@ -30,16 +30,21 @@ class Photoview extends Component {
           }
         }}
       >
-        <img 
-          src={ imgURL }
-          style={{ 
-            marginTop: '2%',
-            height: '85%', 
-            border: '1px solid rgba(105, 105, 105, 0.40)',
+        {id && (
+          <img 
+            src={ imgURL }
+            alt={ imgURL }
+            style={{ 
+              marginTop: '2%',
+              height: '85%', 
+              border: '1px solid rgba(105, 105, 105, 0.40)',
+  
+            }}
+            onClick={ clickHandler }
+          />
 
-          }}
-          onClick={ this.props.clickHandler }
-        />
+        )}
+        <span>`${ title }`</span>
       </div>
     );
   }

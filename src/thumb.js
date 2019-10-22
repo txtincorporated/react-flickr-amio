@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
 
 import { FLICKR_CDN } from './api';
-import Photoview from './photo';
 
 class Thumbdisplay extends Component {
   render() {
-    const { farm, server, id, secret, title } = this.props;
+    const { farm, server, id, secret, title, clickHandler } = this.props;
     const size = '_q';
     const imgURL = FLICKR_CDN(farm, server, id, secret, size);
     
@@ -17,7 +16,7 @@ class Thumbdisplay extends Component {
           marginRight: '0.125em',
 
         }}
-        onClick={ this.props.clickHandler }
+        onClick={ clickHandler }
 
       >
         <img 
@@ -31,3 +30,4 @@ class Thumbdisplay extends Component {
 }
 
 export default Thumbdisplay;
+export { Thumbdisplay }; // for shallow renders
