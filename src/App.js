@@ -94,7 +94,7 @@ class App extends Component {
 
   render() { 
     const { photos, photo, shown } = this.state
-    const { containerDefault, photoShow, photoClose, photoClick } = this
+    const { containerDefault, photoShow, photoClick, photoClose } = this
 
     return (
       <div className="App">
