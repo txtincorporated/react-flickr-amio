@@ -38,7 +38,6 @@ class App extends Component {
   }
     
     reqPhotos = async () => {
-      // let startDate = (Date.now() - 86400000)/1000 | 0;
       try {
         let res = await fetch( apiParams );
         return await res.json();
@@ -149,4 +148,4 @@ class App extends Component {
 }
 
 export default App;
-export { App }; //For unit testing with Enzyme shallow renders
+export { App }; // For unit testing with Enzyme shallow renders

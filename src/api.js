@@ -14,16 +14,6 @@ const startDate = (Date.now() - 86400000)/1000 | 0;
 
 const apiParams = `${FLICKR}/?method=flickr.photos.search&api_key=${FLICKR_KEY}&tags=landscape%2C+architecture&min_upload_date=${startDate}&sort=date-upload-asc&safe_search=1&content_type=1&media=photos&has_geo=1&extras=geo&per_page=250&format=json&nojsoncallback=1`;
 
-// export const reqPhotos = () => {
-//   let startDate = (Date.now() - 86400000)/1000 | 0;
-
-//   return fetch(
-//     `${FLICKR}/?method=flickr.photos.search&api_key=${FLICKR_KEY}&tags=landscape%2C+architecture&min_upload_date=${startDate}&sort=date-upload-asc&safe_search=1&content_type=1&media=photos&has_geo=1&extras=geo&per_page=250&format=json&nojsoncallback=1`
-//   )
-//     .then(res => res.json());
-
-// };
-
 export { FLICKR_KEY };
 export { FLICKR };
 export { MBOX_TOKEN };
