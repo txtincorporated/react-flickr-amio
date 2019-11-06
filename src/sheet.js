@@ -35,3 +35,4 @@ class Sheetview extends Component {
 }
 
 export default Sheetview;
+export { Sheetview };
