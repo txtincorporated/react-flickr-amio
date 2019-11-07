@@ -6,6 +6,7 @@ import { Sheetview } from './sheet';
 
 jest.mock( './photo', () => () => '<mock-photoview />' );
 jest.mock( './photos', () => () => 'mock-photoset' );
+jest.mock( './thumb', () => () => 'mock-thumbview' );
 
 const mockProps = {
   photos: [{}],
