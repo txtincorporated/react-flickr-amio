@@ -51,3 +51,4 @@ class Photoview extends Component {
 }
 
 export default Photoview;
+export { Photoview };

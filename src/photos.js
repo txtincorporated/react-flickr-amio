@@ -13,3 +13,4 @@ class Photoset extends Component {
 }
 
 export default Photoset;
+export { Photoset };
