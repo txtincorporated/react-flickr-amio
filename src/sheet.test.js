@@ -9,7 +9,7 @@ jest.mock( './photos', () => () => 'mock-photoset' );
 jest.mock( './thumb', () => () => 'mock-thumbview' );
 
 const mockProps = {
-  photos: [{}],
+  photos: [{ id: 0 }],
   photo: {},
   clearPhoto:  () => {},
   photoClick: () => {},
