@@ -5,6 +5,7 @@ import { shallow } from 'enzyme';
 import { Sheetview } from './sheet';
 
 jest.mock( './photo', () => () => '<mock-photoview />' );
+jest.mock( './photos', () => () => 'mock-photoset' );
 
 const mockProps = {
   photos: [{}],
