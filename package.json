@@ -6,7 +6,7 @@
     "@babel/core": "^7.0.0-bridge.0",
     "@babel/preset-env": "^7.5.5",
     "mapbox-gl": "0.48.0",
-    "node-fetch": "^2.6.0",
+    "node-fetch": "^2.6.1",
     "prop-types": "^15.7.2",
     "raf": "3.4.1",
     "react": "^15.6.1",
